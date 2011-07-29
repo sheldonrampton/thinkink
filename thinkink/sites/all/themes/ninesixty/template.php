@@ -18,6 +18,29 @@ function ninesixty_preprocess_html(&$vars) {
  */
 function ninesixty_preprocess_page(&$vars, $hook) {
 
+if (!drupal_is_front_page() && isset($vars['node']) ) {
+
+ if ($vars['node']->nid == 1) {
+    drupal_add_css(drupal_get_path('theme', 'ninesixty') . "/styles/node/printservice.css");
+  }
+
+ if ($vars['node']->nid == 2) {
+    drupal_add_css(drupal_get_path('theme', 'ninesixty') . "/styles/node/designservice.css");
+  }
+  
+ if ($vars['node']->nid == 3) {
+    drupal_add_css(drupal_get_path('theme', 'ninesixty') . "/styles/node/whatshappening.css");
+  }
+  if ($vars['node']->nid == 4) {
+    drupal_add_css(drupal_get_path('theme', 'ninesixty') . "/styles/node/philosophy.css");
+  }
+  if ($vars['node']->nid == 6 || $vars['node']->nid == 7) {
+    drupal_add_css(drupal_get_path('theme', 'ninesixty') . "/styles/node/filetransfer.css");
+  }
+}
+  
+  
+
   // For easy printing of variables.
   $vars['logo_img'] = '';
   if (!empty($vars['logo'])) {
@@ -39,12 +62,7 @@ function ninesixty_preprocess_page(&$vars, $hook) {
   }
   $vars['linked_site_name'] = '';
   if (!empty($vars['site_name'])) {
-    $vars['linked_site_name'] = l($vars['site_name'], '<front>', array(
-      'attributes' => array(
-        'rel'   => 'home',
-        'title' => t('Home'),
-      ),
-    ));
+    $vars['linked_site_name'] = '';
   }
 
   // Site navigation links.

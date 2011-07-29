@@ -44,12 +44,7 @@
 
 
   <div id="main" class="column <?php print ns('grid-16', $page['sidebar_first'], 4, $page['sidebar_second'], 3) . ' ' . ns('push-4', !$page['sidebar_first'], 4); ?>">
-    <?php print $breadcrumb; ?>
-    <?php print render($title_prefix); ?>
-    <?php if ($title): ?>
-      <h1 class="title" id="page-title"><?php print $title; ?></h1>
-    <?php endif; ?>
-    <?php print render($title_suffix); ?>      
+        
     <?php if ($tabs): ?>
       <div class="tabs"><?php print render($tabs); ?></div>
     <?php endif; ?>
@@ -58,6 +53,17 @@
 
     <div id="main-content" class="region clearfix">
       <?php print render($page['content']); ?>
+       <?php if ($page['footer']): ?>
+      <div id="footer-region" class="region grid-14 clearfix">
+                <?php print render($page['footer']); ?>
+     </div>
+    <?php endif; ?>
+    
+        <div id="footer" class="prefix-1 suffix-1">
+        <img src="http://localhost/thinkink/sites/all/themes/ninesixty/images/contact_22.jpg">
+  
+   
+  </div>
     </div>
 
     <?php print $feed_icons; ?>
@@ -76,12 +82,6 @@
 <?php endif; ?>
 
 
-  <div id="footer" class="prefix-1 suffix-1">
-    <?php if ($page['footer']): ?>
-      <div id="footer-region" class="region grid-14 clearfix">
-        <?php print render($page['footer']); ?>
-      </div>
-    <?php endif; ?>
-  </div>
+
 
 </div>
