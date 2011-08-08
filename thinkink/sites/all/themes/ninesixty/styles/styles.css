@@ -137,7 +137,7 @@ div#footer{
   line-height: 27px;
 }
 
-.field-type-text-with-summary{
+.leftko2 .field-type-text-with-summary, .rightko2 .field-type-text-with-summary{
   color: #000000;
 }
 
@@ -150,4 +150,62 @@ label{
   font-size: 11px;
   line-height: 22px;
   font-weight: normal;
+}
+
+.node-portfolio .views-field-field-image{
+  padding: 20px;
+  border: 1px solid #fff;
+  margin: 10px;
+  background-color: #fff;
+}
+
+.node-portfolio .views-field-title{
+  padding: 2px;
+  border: 1px solid #fff;
+  margin: 10px;
+  background-color: #fff;
+}
+
+.panels-flexible-row-portfolio{
+  background-color: #ffffff;
+  width: 693px; 
+  margin-top: -32px
+}
+.doormat{
+  background-color: #404041;
+  height: 25px;
+  margin-left: 0;
+  margin-top: 200px;
+  padding-bottom: 5px;
+  padding-left: 32px;
+  padding-top: 5px;
+  width: 661px;
+}
+
+.doormat a:link, .doormat a:hover, .doormat a:visited{
+    color: #999999;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 800;
+    margin-left: 7px;
+}
+
+div#nicemenuko{
+  margin-top: 50px;
+}
+
+div#nicemenuko ul.nice-menu a{
+  color: #000000;
+} 
+portfolio_right{
+  color: #000000;
+ 
+}
+
+.views-slideshow-controls-bottom{
+  color: #000000;
+  float: right;
+  margin-right: 270px;
+  margin-top: 480px;
 }
