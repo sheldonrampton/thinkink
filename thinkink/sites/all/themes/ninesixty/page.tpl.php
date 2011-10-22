@@ -60,7 +60,7 @@
     <?php endif; ?>
     
         <div id="footer" class="prefix-1 suffix-1">
-        <img src="http://localhost/thinkink/sites/all/themes/ninesixty/images/contact_22.jpg">
+        <img src="/sites/all/themes/ninesixty/images/contact_22.jpg">
   
    
   </div>
