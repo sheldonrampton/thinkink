@@ -2,7 +2,11 @@
 // $Id: page.tpl.php,v 1.1.2.2.4.2 2011/01/11 01:08:49 dvessel Exp $
 ?>
 <div id="page" class="container-16 clearfix">
-
+  <div id="social-icons">
+    <a href="http://www.linkedin.com/company/2250307"><img src="/images/linkedin.png"></a>
+    <a href="http://www.facebook.com/pages/THINK-INK-DESIGN/342036964781"><img src="/images/facebook.png"></a>
+    <a href="http://twitter.com/#!/THINKINKDESIGN"><img src="/images/twitter.png"></a>
+  </div>
   <div id="site-header" class="clearfix">
     <div id="branding" class="grid-4 clearfix">
     <?php if ($linked_logo_img): ?>
@@ -81,8 +85,5 @@
     <?php print render($page['sidebar_second']); ?>
   </div>
 <?php endif; ?>
-
-
-
 
 </div>
