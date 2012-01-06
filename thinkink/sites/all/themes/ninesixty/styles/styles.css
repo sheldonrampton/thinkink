@@ -1,5 +1,9 @@
 /* $Id: styles.css,v 1.1.2.2.2.1 2011/01/11 01:08:49 dvessel Exp $ */
 
+body.front #main {
+  margin-top: 30px;
+}
+
 h1#site-name {
   margin-bottom: 0;
 }
@@ -200,6 +204,10 @@ div#footer{
   margin: 0;
   padding: 0;
   width: 840px;
+}
+div#footer p {
+  font-size: 80%;
+  color: #AAAAAA;
 }
 
 #footer img {
