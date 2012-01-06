@@ -1,9 +1,5 @@
 /* $Id: styles.css,v 1.1.2.2.2.1 2011/01/11 01:08:49 dvessel Exp $ */
 
-body.front #main {
-  margin-top: 30px;
-}
-
 h1#site-name {
   margin-bottom: 0;
 }
@@ -25,7 +21,9 @@ ul.secondary-menu {
   padding: 0;
 }
 
-
+#slideshow {
+  margin-top: 55px;
+}
 .leftko2{
   padding: 0 35px 35px 35px;
   background-color: #ffffff;
@@ -44,6 +42,10 @@ ul.secondary-menu {
 body{ 
   background-color: #000000;
   color: #fff;
+}
+
+body.page-contactushtml {
+  color: #000000;
 }
 
 .orange-link{
@@ -75,7 +77,19 @@ body{
   display: inline-block;
 }
 
-.region-footer {
+
+body.not-front .region-footer {
+   background-color: #404041;
+    margin-left: 70px;
+    margin-top: 0;
+    padding-bottom: 9px;
+    padding-left: 0px;
+    padding-top: 9px;
+    width: 696px;
+    height: 25px;
+}
+
+body.front .region-footer {
    background-color: #404041;
     margin-left: 70px;
     margin-top: 0;
@@ -85,6 +99,12 @@ body{
     width: 717px;
     height: 25px;
 }
+
+.field-name-field-thinkink-logo img {
+    border: 0 none;
+    margin-left: 68px;
+}
+
 .region-footer #block-nice-menus-1 {
   text-align: center;
 }
@@ -92,6 +112,9 @@ body{
   display: inline-block;
 }
 
+.ss-doormat a:link,
+.ss-doormat a:hover,
+.ss-doormat a:visited,
 .doormat a:link,
 .doormat a:hover,
 .doormat a:visited,
@@ -111,6 +134,7 @@ body{
 }
 
 .doormat a:link,
+.ss-doormat a:link,
 .panels-flexible-region-3-doormat a:link,
 .region-footer a:link {
     color: #FFFFFF;
@@ -123,18 +147,21 @@ body{
 }
 
 .doormat ul li,
+.ss-doormat ul li,
 .panels-flexible-region-3-doormat ul li,
 .region-footer ul li {
   border-left: 1px solid #FFF;
 }
 
 .doormat ul,
+.ss-doormat ul,
 .panels-flexible-region-3-doormat ul,
 .region-footer ul {
   -moz-padding-start: 0;
 }
 
 .doormat ul li:first-child,
+.ss-doormat ul li:first-child,
 .panels-flexible-region-3-doormat ul li:first-child,
 .region-footer ul li:first-child,
 .doormat ul.nice-menu li:first-child,
@@ -149,6 +176,7 @@ ul.nice-menu li:first-child {
 }
 
 .doormat ul li:first-child a,
+.ss-doormat ul li:first-child a,
 .panels-flexible-region-3-doormat ul li:first-child a,
 .region-footer ul li:first-child a {
   margin-left: 0;
@@ -161,9 +189,6 @@ ul.nice-menu li {
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
     -moz-border-top-colors: none;
-    xbackground-color: #EEEEEE;
-    xborder-color: -moz-use-text-color #CCCCCC #CCCCCC;
-    xborder-style: none solid solid;
     border-width: 0 1px 1px;
     float: left;
 }
@@ -176,25 +201,46 @@ div#footer{
   padding: 0;
   width: 840px;
 }
-div#footer p {
-  font-size: 80%;
-  color: #AAAAAA;
+
+#footer img {
+    margin-left: 125px;
+}#footer p {
+    margin-left: 129px;
+}
+
+.not-front #footer p {
+    margin-left: 50px;
+}
+.not-front #footer img {
+    margin-left: 20px;
+    margin-top:  -20px;
+}
+
+.doormat #ss_footer {
+    background-color: #404041;
+    height: 22px;
+    margin-left: 0;
+    margin-top: 37px;
+    padding-bottom: 5px;
+    padding-left: 0;
+    padding-top: 5px;
+    text-align: center;
+    width: 693px;
 }
 
 .panels-flexible-region-4-messagebox-inside{
-  xborder: 1px solid #000000;
-  padding: 0 30px 30px 30px;
-  xbackground-color: #FED100;
+  padding: 0 55px 35px 35px;
   color:#000000;
   height:575px;
 }
 
 .panels-flexible-region-4-testimonial-inside{
-  xborder: 1px solid #000000;
-  padding: 0 30px 30px 30px;
+  padding: 0 30px 35px 35px;
   background-color: #fff;
   color:#000000;
   height:575px;
+  width: 216px;
+  margin-left: -32px;
 }
 
 .field-name-field-testimonial{
@@ -238,6 +284,50 @@ label{
   width: 693px; 
   margin-top: -32px
 }
+
+.page-contactushtml #footer p,
+.page-portfoliohtml #footer p,
+.page-annualshtml #footer p,
+.page-brochureshtml #footer p,
+.page-dmhtml #footer p,
+.page-donorwallshtml #footer p,
+.page-invitationshtml #footer p,
+.page-logoshtml #footer p,
+.page-newslettershtml #footer p,
+.page-stationeryhtml #footer p,
+.page-websiteshtml #footer p
+{
+    margin-left: 108px;
+    color: #ffffff;
+}
+.page-contactushtml #footer img,
+.page-portfoliohtml #footer img,
+.page-annualshtml #footer img,
+.page-brochureshtml #footer img,
+.page-dmhtml #footer img,
+.page-donorwallshtml #footer img,
+.page-invitationshtml #footer img,
+.page-logoshtml #footer img,
+.page-newslettershtml #footer img,
+.page-stationeryhtml #footer img,
+.page-websiteshtml #footer img
+{
+    margin-left: 87px;
+    margin-top: 0;
+}
+
+.ss-doormat {
+    background-color: #404041;
+    height: 27px;
+    margin-left: 0;
+    margin-top: 50px;
+    padding-bottom: 5px;
+    padding-left: 21px;
+    padding-top: 8px;
+    text-align: center;
+    width: 673px;
+}
+
 .doormat{
   background-color: #404041;
   height: 25px;
@@ -285,8 +375,12 @@ portfolio_right{
 .views-slideshow-controls-bottom{
   color: #000000;
   float: right;
-  margin-right: 270px;
-  margin-top: 480px;
+  margin-right: 213px;
+  
+}
+
+.views_slideshow_slide_counter .num {
+  margin-left: -150px;
 }
 
 .headerko2 img{
@@ -315,8 +409,110 @@ h2 {
 
 #social-icons {
   margin-top: 3px;
-  margin-right: -200px;
   text-align: right;
   width: 830px;
   position: absolute;
 }
+
+.views-slideshow-controls-text-previous a {
+  background: url('http://thinkink.nuamsdev.com/sites/all/themes/ninesixty/images/prev.png') no-repeat scroll 0 0 transparent;
+  display: block;
+  height: 13px;
+  overflow: hidden;
+  text-indent: -53px;
+  width: 13px;
+  float:left;
+}
+
+.views-slideshow-controls-text-pause a {
+  background: url("http://thinkink.nuamsdev.com/sites/all/themes/ninesixty/images/pause.png") no-repeat scroll 0 0 transparent;
+  display: block;
+  height: 13px;
+  margin-left: 15px;
+  margin-right: 15px;
+  overflow: hidden;
+  text-indent: -53px;
+  width: 13px;
+  float: left;
+}
+
+.views-slideshow-controls-text-next a {
+  background: url("http://thinkink.nuamsdev.com/sites/all/themes/ninesixty/images/next.png") no-repeat scroll 0 0 transparent;
+  display: block;
+  height: 13px;
+  overflow: hidden;
+  text-indent: -53px;
+  width: 13px;
+}
+
+table.cc-top {
+  height: 22px; 
+  width: 382px; 
+  margin-left: 100px; 
+  margin-bottom: 10px;
+}
+
+table.cc-bottom {
+  width: 577px; 
+  height: 22px;
+}
+
+
+tbody {
+    border-top: 0 none;
+}
+
+.page-contactushtml .pane-content{
+
+  border: medium none;
+}
+
+#contact-persons{
+  padding-left: 110px;
+}
+
+#contact-info{
+  margin-left: 50px;
+}
+
+
+table.cc-top .name{
+    margin-bottom: 5px;
+    margin-left: 3px;
+    color: #333333;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    line-height: 17px;
+    font-weight: 600;
+}
+
+table.cc-bottom .name {
+    margin-bottom: 5px;
+    margin-left: -4px;
+    color: #333333;
+    font-family: Verdana,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    line-height: 17px;
+    font-weight: 600;
+}
+
+table.cc-top .jobdescription{
+    font-size: 11px;
+    margin-bottom: 5px;
+    margin-left: 30px;
+}
+
+table.cc-bottom .jobdescription {
+    font-size: 11px;
+    margin-bottom: 5px;
+    margin-left: 7px;
+}
+
+table.cc-top .email a,
+table.cc-bottom .email a{
+    color: #00AED9;
+    font-size: 11px;
+    margin-bottom: 5px;
+    margin-left: -30px;
+}
+
