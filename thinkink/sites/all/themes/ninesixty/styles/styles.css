@@ -1,5 +1,9 @@
 /* $Id: styles.css,v 1.1.2.2.2.1 2011/01/11 01:08:49 dvessel Exp $ */
 
+body.front #main {
+  margin-top: 30px;
+}
+
 h1#site-name {
   margin-bottom: 0;
 }
@@ -172,6 +176,10 @@ div#footer{
   padding: 0;
   width: 840px;
 }
+div#footer p {
+  font-size: 80%;
+  color: #AAAAAA;
+}
 
 .panels-flexible-region-4-messagebox-inside{
   xborder: 1px solid #000000;
@@ -307,6 +315,7 @@ h2 {
 
 #social-icons {
   margin-top: 3px;
+  margin-right: -200px;
   text-align: right;
   width: 830px;
   position: absolute;
