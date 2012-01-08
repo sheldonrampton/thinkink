@@ -18,29 +18,6 @@ function ninesixty_preprocess_html(&$vars) {
  */
 function ninesixty_preprocess_page(&$vars, $hook) {
 
-if (!drupal_is_front_page() && isset($vars['node']) ) {
-
- if ($vars['node']->nid == 1) {
-    drupal_add_css(drupal_get_path('theme', 'ninesixty') . "/styles/node/printservice.css");
-  }
-
- if ($vars['node']->nid == 2) {
-    drupal_add_css(drupal_get_path('theme', 'ninesixty') . "/styles/node/designservice.css");
-  }
-  
- if ($vars['node']->nid == 3) {
-    drupal_add_css(drupal_get_path('theme', 'ninesixty') . "/styles/node/whatshappening.css");
-  }
-  if ($vars['node']->nid == 4) {
-    drupal_add_css(drupal_get_path('theme', 'ninesixty') . "/styles/node/philosophy.css");
-  }
-  if ($vars['node']->nid == 6 || $vars['node']->nid == 7) {
-    drupal_add_css(drupal_get_path('theme', 'ninesixty') . "/styles/node/filetransfer.css");
-  }
-}
-  
-  
-
   // For easy printing of variables.
   $vars['logo_img'] = '';
   if (!empty($vars['logo'])) {
@@ -176,4 +153,103 @@ function ninesixty_css_alter(&$css) {
       }
     }
   }
+}
+
+function _ninesixty_nice_menus_build($variables) {
+//  return theme_nice_menus_build($variables);
+  $menu = $variables['menu'];
+  $depth = $variables['depth'];
+  $trail = $variables['trail'];
+  $output = '';
+  $links = array();
+  // Prepare to count the links so we can mark first, last, odd and even.
+  $index = 0;
+  $count = 0;
+  foreach ($menu as $menu_count) {
+    if ($menu_count['link']['hidden'] == 0) {
+      $count++;
+    }
+  }
+  // Get to building the menu.
+  foreach ($menu as $menu_item) {
+    if (drupal_is_front_page() && $menu_item['link']['link_title'] == 'Home') continue;
+    $mlid = $menu_item['link']['mlid'];
+    // Check to see if it is a visible menu item.
+    if (!isset($menu_item['link']['hidden']) || $menu_item['link']['hidden'] == 0) {
+      // Check our count and build first, last, odd/even classes.
+      $index++;
+      $first_class = $index == 1 ? ' first ' : '';
+      $oddeven_class = $index % 2 == 0 ? ' even ' : ' odd ';
+      $last_class = $index == $count ? ' last ' : '';
+      // Build class name based on menu path
+      // e.g. to give each menu item individual style.
+      // Strip funny symbols.
+      $clean_path = str_replace(array('http://', 'www', '<', '>', '&', '=', '?', ':', '.'), '', $menu_item['link']['href']);
+      // Convert slashes to dashes.
+      $clean_path = str_replace('/', '-', $clean_path);
+      $class = 'menu-path-' . $clean_path;
+      if ($trail && in_array($mlid, $trail)) {
+        $class .= ' active-trail';
+      }
+      // If it has children build a nice little tree under it.
+      if ((!empty($menu_item['link']['has_children'])) && (!empty($menu_item['below'])) && $depth != 0) {
+        // Keep passing children into the function 'til we get them all.
+        $children = _ninesixty_nice_menus_build(array('menu' => $menu_item['below'], 'depth' => $depth, 'trail' => $trail));
+        // Set the class to parent only of children are displayed.
+        $parent_class = ($children && ($menu_item['link']['depth'] <= $depth || $depth == -1)) ? 'menuparent ' : '';
+         
+         $element = array(
+          '#below' => '',
+          '#title' => $menu_item['link']['link_title'],
+          '#href' =>  $menu_item['link']['href'],
+          '#localized_options' => array(),
+          '#attributes' => array(),
+        );
+        $variables['element'] = $element;
+        
+        $links[] = _ninesixty_nice_menus_build($variables);
+        // Check our depth parameters.
+        if ($menu_item['link']['depth'] <= $depth || $depth == -1) {
+          // Build the child UL only if children are displayed for the user.
+          if ($children) {
+            $links[] = $children;
+          }
+        }
+      }
+      else {
+     
+        $element = array(
+          '#below' => '',
+          '#title' => $menu_item['link']['link_title'],
+          '#href' =>  $menu_item['link']['href'],
+          '#localized_options' => array(),
+          '#attributes' => array(),
+        );
+        $variables['element'] = $element;
+        $links[] = theme('nice_menus_menu_item_link', $variables);
+      }
+    }
+  }
+  return implode(' | ', $links);
+}
+
+function ninesixty_nice_menus($variables) {
+  $id = $variables['id'];
+  $menu_name = $variables['menu_name'];
+  if ($menu_name != 'menu-thinkink') {
+    return theme_nice_menus($variables);
+  }
+  $depth = $variables['depth'];
+  $menu = $variables['menu'];
+  $menu = isset($menu) ? $menu : menu_tree_all_data($menu_name);
+  if (isset($menu)) {
+    $page_menu = menu_tree_page_data($menu_name);
+    $trail = nice_menus_build_page_trail($page_menu);
+    unset($page_menu);
+  }
+  
+  $output = array();
+  $output['subject'] = 'Think Ink Navigation';
+  $output['content'] = _ninesixty_nice_menus_build(array('menu' => $menu, 'depth' => $depth, 'trail' => $trail));
+  return $output;
 }

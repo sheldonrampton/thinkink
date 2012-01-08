@@ -67,7 +67,7 @@
     
         <div id="footer" class="prefix-1 suffix-1">
         <img src="/sites/all/themes/ninesixty/images/contact_22.jpg"><br />
-        <p>©2011 Think Ink &amp; Design</p>
+        <p>©2012 Think Ink &amp; Design</p>
   
    
   </div>
