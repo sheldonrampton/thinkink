@@ -49,7 +49,7 @@ body {
   color: #fff;
 }
 
-body.page-contactushtml {
+body.page-contactushtml .panels-flexible-row-inside-first {
   color: #000000;
 }
 
@@ -253,6 +253,14 @@ div#footer p {
   margin-left: -32px;
 }
 
+/* HOW TO FIND US -- node/7 */
+body.page-node-7 .panels-flexible-region-4-messagebox-inside {
+  padding: 0 75px 35px 0px;
+}
+body.page-node-7 .panels-flexible-column-first {
+  z-index: 10;
+}
+
 /* OUR PHILOSOPHY -- node/4 */
 body.page-node-4 .panels-flexible-region-4-messagebox-inside{
   background-color: #1B9CD4;
@@ -288,10 +296,17 @@ body.page-node-6 .panels-flexible-region-4-messagebox-inside{
 body.page-node-6 .panels-flexible-region-4-messagebox-inside .field-name-field-article-image {
     margin-left: -35px;
 }
+body.page-node-6 textarea {
+  resize: none;
+}
 
 /* DESIGN SERVICES -- node/2 */
-body.page-node-2 .panels-flexible-region-4-messagebox-inside{
-    background-color: #96C824;
+body.page-node-2 .panels-flexible-region-4-messagebox-inside {
+  background-color: #96C824;
+}
+
+body.page-node-2 .panels-flexible-region-4-messagebox-inside h2 {
+  margin-bottom: 10px;
 }
 
 .field-name-field-testimonial{
@@ -377,10 +392,10 @@ label{
     margin-left: 0;
     margin-top: 50px;
     padding-bottom: 5px;
-    padding-left: 21px;
+    padding-left: 0px;
     padding-top: 8px;
     text-align: center;
-    width: 673px;
+    width: 694px;
 }
 
 .doormat{
@@ -566,3 +581,28 @@ table.cc-bottom .email a{
     margin-left: -30px;
 }
 
+.orangenavigation {
+  margin-left: 20px;
+}
+
+body.node-type-image #main,
+.webform-confirmation-wrapper {
+  margin-left: 83px;
+  padding: 20px 20px 20px 20px;
+  width: 654px;
+  background-color: #fff;
+  color: #000;
+}
+
+body.node-type-image #main #footer {
+  display: none;
+}
+.webform-confirmation-wrapper {
+  height:315px;
+}
+.webform-confirmation-wrapper .thinkink-logo {
+  text-align: right;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 100px;
+}
